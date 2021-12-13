@@ -59,4 +59,8 @@ if __name__ == "__main__":
     beauty_print(data_frame_usages.annotate_field(
         'sepal + petal (length)', 'sepal length (cm)', 'petal length (cm)'))
 
-    beauty_print(df.loc[5:15, ['sepal width (cm)','petal width (cm)']], 'Columns: sepal and petal width (cm)')
+    beauty_print(df.loc[5:15, ['sepal width (cm)', 'petal width (cm)']],
+                 'Columns: sepal and petal width (cm)')
+
+    beauty_print(df.drop_duplicates(subset=['petal width (cm)'], keep=False),
+                 'Only unique values from column: petal width (cm)')
