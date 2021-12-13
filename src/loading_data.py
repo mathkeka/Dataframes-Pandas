@@ -6,7 +6,7 @@ class LoadingData:
     def generate_csv(self, dataframe: pd.DataFrame) -> bool:
         try:
             file_name = "iris.csv"
-            dataframe.to_csv(file_name, sep='\t', encoding='utf-8')
+            dataframe.to_csv(file_name, sep=',', encoding='utf-8')
             return True
         except Exception as e:
             print(e)
@@ -37,3 +37,5 @@ class LoadingData:
 
 if __name__ == "__main__":
     LoadingData().generate_iris_csv()
+    df = LoadingData().read_csv('iris.csv')
+    print(df)
